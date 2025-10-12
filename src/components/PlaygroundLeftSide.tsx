@@ -14,10 +14,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { usePlaygroundContext } from "@/app/playground/context";
 
 const PlaygroundLeftSide = ({}) => {
-  const { temperature, setTemperature } = usePlaygroundContext();
   return (
     <div>
       <div className="text-2xl font-semibold">Playground</div>
@@ -40,11 +38,11 @@ const PlaygroundLeftSide = ({}) => {
       </div>
       <div className="flex justify-between pt-8 pb-5">
         <p className="text-sm">Temperature</p>
-        <p className="text-sm text-black font-semibold">{temperature}</p>
+        {/* <p className="text-sm text-black font-semibold">{temperature}</p> */}
       </div>
       <Slider
-        value={temperature}
-        onValueChange={setTemperature}
+        // value={temperature}
+        // onValueChange={setTemperature}
         max={1.0}
         min={0.0}
         step={0.01}

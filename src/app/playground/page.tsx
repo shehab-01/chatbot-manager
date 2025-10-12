@@ -15,7 +15,6 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import PlaygroundLeftSide from "@/components/PlaygroundLeftSide";
-import PlaygroundContext from "./context";
 
 const Playground = () => {
   const [temperature, setTemperature] = useState([0.6]);
@@ -24,9 +23,7 @@ const Playground = () => {
     <div className="flex">
       <div className="w-100 flex-none border-r-1 border-black h-screen">
         <div className="px-2 py-5 pr-6">
-          <PlaygroundContext.Provider value={{ temperature, setTemperature }}>
-            <PlaygroundLeftSide />
-          </PlaygroundContext.Provider>
+          <PlaygroundLeftSide />
         </div>
       </div>
       <div className="flex-1">chat</div>
