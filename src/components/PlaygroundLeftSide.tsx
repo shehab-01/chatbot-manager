@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { ModelComboBox } from "@/components/ModelComboBox";
+import { AgentComboBox } from "@/components/AgentComboBox";
 import { Slider } from "@/components/ui/slider";
 import {
   Select,
@@ -30,9 +30,7 @@ const PlaygroundLeftSide = ({}) => {
         <Separator />
       </div>
       <p className="text-sm">Model</p>
-      <div className="py-2">
-        <ModelComboBox />
-      </div>
+      <div className="py-2">{/* <AgentComboBox /> */}</div>
       <div className="py-2">
         <Separator />
       </div>

@@ -42,9 +42,14 @@ const frameworks = [
   },
 ];
 
-export function ModelComboBox() {
+type AgentComboBoxProps = {
+  value: string;
+  onValueChange: (value: string) => void;
+};
+
+export function AgentComboBox({ value, onValueChange }: AgentComboBoxProps) {
   const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState("");
+  // const [value, setValue] = React.useState("");
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -57,13 +62,13 @@ export function ModelComboBox() {
         >
           {value
             ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select model..."}
+            : "Select Agent"}
           <ChevronsUpDownIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-full p-0">
+      <PopoverContent className="p-0">
         <Command>
-          <CommandInput placeholder="Search framework..." />
+          {/* <CommandInput placeholder="Search framework..." /> */}
           <CommandList>
             <CommandEmpty>No framework found.</CommandEmpty>
             <CommandGroup>
@@ -72,7 +77,7 @@ export function ModelComboBox() {
                   key={framework.value}
                   value={framework.value}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue);
+                    onValueChange(currentValue === value ? "" : currentValue);
                     setOpen(false);
                   }}
                 >
