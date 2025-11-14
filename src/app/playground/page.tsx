@@ -13,7 +13,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+} from "@/components/ui/input-group";
 // import PlaygroundLeftSide from "@/components/PlaygroundLeftSide"; // Uncomment if you use it
 
 const Playground = () => {
@@ -88,7 +95,37 @@ const Playground = () => {
       </div>
 
       {/* --- Main Chat Area --- */}
-      <div className="flex-1">chat</div>
+
+      <div className="flex-1 flex flex-col items-center">
+        <div className="flex-1 overflow-y-auto p-4 space-y-4 w-1/2">
+          <div className="text-sm p-4 text-center text-gray-500">
+            This is the start of your chat.
+          </div>
+
+          <div className="flex justify-start">
+            <div className="p-3 bg-gray-200 rounded-lg max-w-[70%]">
+              Hello! How does this chat layout look?
+            </div>
+          </div>
+
+          <div className="flex justify-end">
+            <div className="p-3 bg-blue-500 text-white rounded-lg max-w-[70%]">
+              This is an AI response, aligned to the right.
+            </div>
+          </div>
+        </div>
+
+        <div className="p-4 border-t border-gray-200 w-1/2">
+          <div>
+            <InputGroup className="h-14 text-lg px-4">
+              <InputGroupInput placeholder="Type your message..." />
+              <InputGroupAddon align="inline-end">
+                <InputGroupButton variant="secondary">Send</InputGroupButton>
+              </InputGroupAddon>
+            </InputGroup>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
